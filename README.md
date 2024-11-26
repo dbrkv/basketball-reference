@@ -1,9 +1,17 @@
-# Crawlee + CheerioCrawler + TypeScript project
+# Crawlee basketball-reference crawler
 
-This template is a production ready boilerplate for developing with `CheerioCrawler`. Use this to bootstrap your projects using the most up-to-date code.
+Crawlee research project to scrape data from basketball-reference site.
 
-If you're looking for examples or want to learn more visit:
+Installation
 
-- [Tutorial](https://crawlee.dev/docs/guides/cheerio-crawler-guide)
-- [Documentation](https://crawlee.dev/api/cheerio-crawler/class/CheerioCrawler)
-- [Examples](https://crawlee.dev/docs/examples/cheerio-crawler)
+```shell
+npm i
+```
+
+Usage
+
+```shell
+npm run start
+```
+
+storage dir will contain exported tables in csv.
