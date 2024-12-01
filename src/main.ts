@@ -3,10 +3,10 @@ import { CheerioCrawler, KeyValueStore } from "crawlee";
 import { tableToCsv } from "./utils.js";
 
 const year = 2025;
-const month = "november";
 const startUrls = [
   `https://www.basketball-reference.com/leagues/NBA_${year}.html`,
-  `https://www.basketball-reference.com/leagues/NBA_${year}_games-${month}.html`,
+  `https://www.basketball-reference.com/leagues/NBA_${year}_games-november.html`,
+  `https://www.basketball-reference.com/leagues/NBA_${year}_games-december.html`,
 ];
 
 const crawler = new CheerioCrawler({
@@ -71,7 +71,18 @@ const crawler = new CheerioCrawler({
       "https://www.basketball-reference.com/leagues/NBA_2025_games-november.html"
     ) {
       await KeyValueStore.setValue(
-        `schedule-${month}.csv`,
+        `schedule-november.csv`,
+        tableToCsv($, "schedule"),
+        {
+          contentType: "text/csv",
+        }
+      );
+    } else if (
+      request.url ===
+      "https://www.basketball-reference.com/leagues/NBA_2025_games-december.html"
+    ) {
+      await KeyValueStore.setValue(
+        `schedule-december.csv`,
         tableToCsv($, "schedule"),
         {
           contentType: "text/csv",
